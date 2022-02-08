@@ -19,13 +19,15 @@ class ViewController: UIViewController {
     }
 
     @IBAction func onNumberButton(_ sender: UIButton) {
-        let numberString = sender.titleLabel!.text!.trimmingCharacters(in: .whitespaces)
-        setNumber(input: numberString)
+        if let numberString = sender.titleLabel?.text?.trimmingCharacters(in: .whitespaces) {
+            setNumber(input: numberString)
+        }
     }
     
     @IBAction func onOperatorButton(_ sender: UIButton) {
-        let operation = sender.titleLabel!.text!
-        setOperator(input: operation)
+        if let operationString = sender.titleLabel?.text {
+            setOperator(input: operationString)
+        }
     }
     
     @IBAction func onClearButton(_ sender: Any) {
